@@ -6,7 +6,7 @@ using Common.Logging;
 
 namespace TimerQuartzService
 {
-    public class QuartzManager<T> where T : BaseTaskJob, IJob
+    public class QuartzManager<T> where T : BaseJobObj
     {
         #region 变量
         private static ISchedulerFactory schedulerFactory = new StdSchedulerFactory();  //scheduler工厂
