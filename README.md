@@ -1,9 +1,5 @@
 # TimerQuartz
 Quartz.net以服务的形式运行
-2016/11/8 更新：
-
-	1.集成WebAPI，一些任务的操作可以通过Web API来操作
-	2.优化任务
 ----------
 包括一些数据持久化的处理
 
@@ -20,3 +16,11 @@ Corn | 说明
 5 30 15 ? \* MON-FRI | 周一至周五的15点30分5秒触发 Mon-FRI可以用1-7代替
 5 30 15 20 \* ? | 每月20号15点30分5秒触发
 5 30 15 L \* ? | 每月最后一天15点30分5秒触发
+
+
+
+
+2016/11/8 更新：
+
+	1.集成WebAPI，一些任务的操作可以通过Web API来操作,集成参考[地址](https://msdn.microsoft.com/zh-tw/communitydocs/dot%20net%20development/ta15081301 "Microsoft")
+	2.优化任务
