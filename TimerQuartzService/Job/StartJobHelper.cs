@@ -16,12 +16,8 @@ namespace TimerQuartzService
         /// </summary>
         public static void Start()
         {
-            //TODO 从数据库里查找任务，添加任务
-
-            //测试数据
-            Dictionary<string, object> dic = new Dictionary<string, object>();
-            dic.Add("dt", DateTime.Now.ToString());
-            QuartzManager<Job_Test>.addJob("task_test_01", "*/15 * * * * ?", dic);
+            //TODO 从数据库里查找任务，直接修改db数据
+            
         }
     }
 }
