@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Http;
 
-namespace TimerQuartzService.Controller
+namespace TimerQuartzService.Controllers
 {
     public class TestController : ApiController
     {
-        [Route("/api/test/a")]
+        [Route("api/test/a")]
         [HttpGet]
         public APIResponseEntity<string> GetInfo()
         {

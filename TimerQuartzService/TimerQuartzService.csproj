@@ -123,7 +123,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="APIResponseEntity.cs" />
-    <Compile Include="Controller\TestController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Job\BaseJobObj.cs" />
     <Compile Include="Job\Job_Test.cs" />
     <Compile Include="Job\StartJobHelper.cs" />

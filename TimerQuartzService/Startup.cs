@@ -16,6 +16,7 @@ namespace TimerQuartzService
         {
             // Configure Web API for self-host.
             HttpConfiguration config = new HttpConfiguration();
+            config.MapHttpAttributeRoutes();
             var jsonFormatter = new JsonMediaTypeFormatter();
             jsonFormatter.SerializerSettings.Converters.Add(new Newtonsoft.Json.Converters.IsoDateTimeConverter() { DateTimeFormat = "yyyy-MM-dd hh:mm:ss" });
             config.Services.Replace(typeof(IContentNegotiator), new JsonContentNegotiator(jsonFormatter));
@@ -26,8 +27,7 @@ namespace TimerQuartzService
             routeTemplate: "api/{controller}/{id}",
             defaults: new { id = RouteParameter.Optional }
             );
-            // 启用属性路由(PS原文有些错误，启用属性路由必须往后放，不然报错)
-            config.MapHttpAttributeRoutes();
+            
             app.UseWebApi(config);
         }
     }
