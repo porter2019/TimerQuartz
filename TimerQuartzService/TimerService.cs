@@ -1,8 +1,8 @@
-﻿using System;
-using System.ServiceProcess;
-using Common.Logging;
+﻿using Common.Logging;
 using Microsoft.Owin.Hosting;
+using System;
 using System.Configuration;
+using System.ServiceProcess;
 
 namespace TimerQuartzService
 {
@@ -19,9 +19,8 @@ namespace TimerQuartzService
 
         protected override void OnStart(string[] args)
         {
-            string port = ConfigurationManager.AppSettings["WebAPIPort"].ToString();
             //Services URI
-            string serveruri = "http://localhost:" + port + "/";
+            string serveruri = ConfigurationManager.AppSettings["WebAPIServerURI"].ToString();
             // Start OWIN host
             apiserver = WebApp.Start<Startup>(url: serveruri);
 

@@ -18,11 +18,11 @@ namespace TimerQuartzService
 
         public void Execute(IJobExecutionContext context)
         {
-            jobStatus.Info("############## (" + this.GetType().ToString() + ")任务开始执行.. #################");
+            jobStatus.Info("############## (" + this.GetType().ToString() + ")任务开始执行.. " + System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + " #################");
 
             JobExcute(context);
 
-            jobStatus.Info("############## (" + this.GetType().ToString() + ")任务执行完毕！ #################");
+            jobStatus.Info("############## (" + this.GetType().ToString() + ")任务执行完毕！ " + System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + " #################");
 
         }
 

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TimerQuartzService
+﻿namespace TimerQuartzService
 {
     /// <summary>
     /// 接口json返回统一格式

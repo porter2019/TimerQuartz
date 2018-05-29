@@ -18,7 +18,7 @@ namespace TimerQuartzService
             HttpConfiguration config = new HttpConfiguration();
             config.MapHttpAttributeRoutes();
             var jsonFormatter = new JsonMediaTypeFormatter();
-            jsonFormatter.SerializerSettings.Converters.Add(new Newtonsoft.Json.Converters.IsoDateTimeConverter() { DateTimeFormat = "yyyy-MM-dd hh:mm:ss" });
+            jsonFormatter.SerializerSettings.Converters.Add(new Newtonsoft.Json.Converters.IsoDateTimeConverter() { DateTimeFormat = "yyyy-MM-dd HH:mm:ss" });
             config.Services.Replace(typeof(IContentNegotiator), new JsonContentNegotiator(jsonFormatter));
             //异常统一格式返回
             config.Filters.Add(new ApiCustomException());

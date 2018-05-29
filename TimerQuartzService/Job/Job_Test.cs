@@ -14,8 +14,9 @@ namespace TimerQuartzService
         {
             JobKey key = context.JobDetail.Key;
             JobDataMap dataMap = context.JobDetail.JobDataMap;
-            string dt = dataMap.GetString("dt");
-            jobStatus.Info("333333333333333测试任务开始执行,收到的参数是：" + dt);
+            string str = dataMap.GetString("str");
+            int id = dataMap.GetInt("id");
+            jobStatus.Info("测试任务开始执行,收到的参数是：" + str + "--" + id.ToString());
             base.JobExcute(context);
         }
     }
