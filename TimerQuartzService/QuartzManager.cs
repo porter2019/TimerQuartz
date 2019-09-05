@@ -79,6 +79,26 @@ namespace TimerQuartzService
         }
 
         /// <summary>
+        /// 暂停所有任务(使用默认的任务组名，触发器名，触发器组名) 
+        /// </summary>
+        public static void StopJob()
+        {
+            try
+            {
+                IScheduler sched = schedulerFactory.GetScheduler();
+                sched.PauseAll();
+                //sched.PauseTrigger(triggerKey);// 停止触发器
+                //sched.UnscheduleJob(triggerKey);// 移除触发器  
+                //sched.DeleteJob(jobKey);// 删除任务  
+            }
+            catch (Exception e)
+            {
+                log.Error("暂停任务失败," + e.StackTrace);
+                throw new Exception(e.Message);
+            }
+        }
+
+        /// <summary>
         /// 暂停一个任务(使用默认的任务组名，触发器名，触发器组名) 
         /// </summary>
         /// <param name="pStrJobName">任务名称</param>
@@ -97,6 +117,23 @@ namespace TimerQuartzService
             catch (Exception e)
             {
                 log.Error("暂停任务失败," + e.StackTrace);
+                throw new Exception(e.Message);
+            }
+        }
+
+        /// <summary>
+        /// 恢复所有任务(使用默认的任务组名，触发器名，触发器组名) 
+        /// </summary>
+        public static void ResumeJob()
+        {
+            try
+            {
+                IScheduler sched = schedulerFactory.GetScheduler();
+                sched.ResumeAll();
+            }
+            catch (Exception e)
+            {
+                log.Error("恢复所有任务失败," + e.StackTrace);
                 throw new Exception(e.Message);
             }
         }

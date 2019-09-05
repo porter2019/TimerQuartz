@@ -13,5 +13,6 @@ if exist "%temp%\getadmin.vbs" ( del "%temp%\getadmin.vbs" )
 
 set SERVICE_NAME=TimerQuartz
 sc stop %SERVICE_NAME%Service
-sc delete %SERVICE_NAME%Service
+ping 127.1 -n 2 >nul
+sc start %SERVICE_NAME%Service
 pause
